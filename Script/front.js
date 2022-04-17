@@ -25,3 +25,13 @@ document.getElementById("next").onclick = function(){
     document.getElementById("firstLogIn").classList.remove('active');
     document.getElementById("firstLogIn2").classList.add('active');
 };
+
+let typeW = document.getElementById("attentionSeeker");
+let text = "Hover above only if you can confront the absolute truth.";
+for(var i=0; i<text.length;i++){
+    let x = text[i];
+    if (x==' '){x="\u00A0";}
+    setTimeout(function setTimeout() {
+        typeW.innerText+=x;
+      }, i * 100)
+}
