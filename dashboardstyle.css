@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: calc(1*(0.5vh + 0.5vw));
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 1em;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 1em;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #303D2B;
+    background-image: linear-gradient(#3d5034,#303D2B);
+}
+.container{
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* justify-content: space-between;
+    position: absolute;
+    z-index: 2; */
+}
+.loggedInAs{
+    display: flex;
+}
+.row1 h1{
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(3*(0.5vh + 0.5vw));
+}
+#userType{
+    color: greenyellow;
+    position: relative;
+    left: 0.5em;
+}
+.buttons{
+    display: flex;
+    height: 50vh;
+    padding: 1vh 0;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.buttons button{
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(2*(0.5vh + 0.5vw));
+    font-weight: 400;
+    padding: 1.5vh 1vw;
+    text-align: left;
+    background-color: #6F786B;
+    border: none;
+    border-radius: calc(0.2*(0.5vh + 0.5vw));
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+.buttons button:hover{
+    transform: scale(102%);
+    transition: 0.1s ease-in-out;
+    background-color: #405737;
+}
+.row2{
+    width: 40vw;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    background-color: #525254;
+    overflow-y: scroll;
+    flex-basis: 60%;
+    padding: 5vh 2vw;
+}
+.issue{
+    padding: 3vh 2vw;
+    font-family: 'Roboto Mono', monospace;
+    background-color: white;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    transition: 0.1s ease-in-out;
+    cursor:default;
+}
+.issue:hover{
+    transition: 0.1s ease-in-out;
+    transform: scale(102%);
+}
+.issue:first-child{
+    margin-top: 0vh;
+}
+.issue>h1{
+    font-size: calc(2*(0.5vh + 0.5vw));
+    color: #525254;
+}
+.issue>p{
+    font-size: calc(1.5*(0.5vh + 0.5vw));
+    color: #525254;
+}
+.finisher{
+    width: 100%;
+    position: relative;
+    top: 1vh;
+    display: flex;
+    font-size: calc(1*(0.5vh + 0.5vw));
+    justify-content: space-between;
+}
+.finisher>div{
+    display: flex;
+    justify-content: space-around;
+}
+#status{
+    color: green;
+}
+
+/* For Modal */
+
+.modal{
+    position: absolute;
+    width: 55%;
+    height: 60%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2vh 2vw;
+    border: rgba(255, 255, 255, 0.19) solid 0.1em;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    top: 0%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+    background-color: #4b5c7669;
+    backdrop-filter: blur(2em);
+    transition: 0.5s ease-in-out;
+    pointer-events: none;
+}
+.modal.active{
+    top:50%;
+    opacity: 1;
+    pointer-events: all;
+}
+.modal>img{
+    position: relative;
+    width: 5%;
+    align-self: flex-end;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.modal img:hover{
+    transform: scale(105%);
+    opacity: 50%;
+    transition: 0.2s ease-in-out;
+}
+.modal input{
+    width: 100%;
+    height: 12%;
+    border:none;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(1.5*(0.5vh + 0.5vw));
+    padding: 0 1vw;
+}
+.modal textarea{
+    width: 100%;
+    height: 12%;
+    border:none;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(1.5*(0.5vh + 0.5vw));
+    padding: 1vh 1vw;
+    resize: none;
+}
+#issueDescription{
+    height: 30%;
+}
+.modalButton{
+    height: 12%;
+    border: none;
+    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(1.5*(0.5vh + 0.5vw));
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #607698;
+    transition: 0.2s ease-in-out;
+}
+.modalButton:hover{
+    transition: 0.2s ease-in-out;
+    background-color: #4d617f;
+}
