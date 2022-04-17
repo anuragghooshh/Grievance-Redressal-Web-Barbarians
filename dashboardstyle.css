@@ -32,6 +32,7 @@ body{
     z-index: 2; */
 }
 .loggedInAs{
+    padding: 1vh 0;
     display: flex;
 }
 .row1 h1{
@@ -60,7 +61,7 @@ body{
     text-align: left;
     background-color: #6F786B;
     border: none;
-    border-radius: 0.1em;
+    border-radius: 0.2em;
     cursor: pointer;
     transition: 0.1s ease-in-out;
 }
@@ -210,39 +211,103 @@ body{
 /* Responsiveness */
 @media only screen and (max-width:868px) and (min-width:481px){
     .container{
-        flex-direction: column;
-        height: 95vh;
+        flex-direction: column-reverse;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .loggedInAs{
-        justify-content: space-evenly;
-    }
-    .loggedInAs h1{
-        font-size: calc(5*(0.5vh + 0.5vw));
-    }
-    .buttons{
-        height: 40vh;
+        position: relative;
+        top: 1vh;
+        justify-content: center;
+        text-align: center;
     }
     .buttons button{
-        width: 90vw;
+        width: 70vw;
+        font-size: calc(3*(0.5vh + 0.5vw));
         text-align: center;
-        font-size: calc(3.5*(0.5vh + 0.5vw));
-    }
-    .row1{
-        position: relative;
-        margin-top: 5vh;
     }
     .row2{
         width: 90vw;
     }
+    .modal{
+        width: 90%;
+        height: 70%;
+    }
+    .modal input{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+        padding: 0 2vw;
+    }
+    .modal textarea{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+    }
+    #issueDescription{
+        height: 35%;
+        padding: 2vh 2vw;
+    }
+    .modalButton{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+    }
     .issue>h1{
         font-size: calc(3*(0.5vh + 0.5vw));
-        color: #525254;
     }
     .issue>p{
         font-size: calc(2.5*(0.5vh + 0.5vw));
-        color: #525254;
     }
     .finisher{
-        font-size: calc(2*(0.5vh + 0.5vw));
+        font-size: calc(1.5*(0.5vh + 0.5vw));
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .container{
+        flex-direction: column-reverse;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .loggedInAs{
+        position: relative;
+        top: 0.5vh;
+        justify-content: center;
+        text-align: center;
+    }
+    .buttons{
+        height: 45vh;
+    }
+    .buttons button{
+        width: 90vw;
+        font-size: calc(3*(0.5vh + 0.5vw));
+        text-align: center;
+    }
+    .row2{
+        width: 90vw;
+    }
+    .modal{
+        width: 90%;
+        height: 70%;
+    }
+    .modal input{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+        padding: 0 2vw;
+    }
+    .modal textarea{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+    }
+    #issueDescription{
+        height: 35%;
+        padding: 2vh 2vw;
+    }
+    .modalButton{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+    }
+    .issue>h1{
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
+    .issue>p{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+    }
+    .finisher{
+        font-size: calc(1.2*(0.5vh + 0.5vw));
     }
 }
