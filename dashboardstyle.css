@@ -120,7 +120,7 @@ body{
 .listAll{
     height: 90%;
     justify-content: space-between;
-    padding: 0 5vw;
+    padding: 0 2vw;
 }
 .listAll ol{
     padding-bottom: 5vh;
@@ -170,8 +170,11 @@ body{
     display: flex;
     justify-content: space-around;
 }
-#status{
+#status1{
     color: green;
+}
+#status2{
+    color: red;
 }
 
 /* For Modal */
@@ -203,7 +206,7 @@ body{
 }
 .closebtn{
     position: relative;
-    width: calc(5*(0.5vh + 0.5vw));
+    width: calc(3*(0.5vh + 0.5vw));
     align-self: flex-end;
     filter: invert(100%);
     cursor: pointer;

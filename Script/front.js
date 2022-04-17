@@ -8,9 +8,9 @@ head.addEventListener("mouseout", function() {
     document.getElementById("aside").classList.remove('blur');
 });
 
-document.getElementById("logInGoogle").onclick = function(){
-    document.getElementById("firstLogIn").classList.add('active');
-};
+// document.getElementById("logInGoogle").onclick = function(){
+//     document.getElementById("firstLogIn").classList.add('active');
+// };
 document.getElementById("close1").onclick = function(){
     document.getElementById("firstLogIn").classList.remove('active');
 };
