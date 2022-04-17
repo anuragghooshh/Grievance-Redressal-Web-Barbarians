@@ -171,6 +171,7 @@ video.active{
     color: #ffffff;
     background-color: #9e9e9e;
     align-items: center;
+    appearance: none;
 }
 .modalButton{
     height: 12%;
@@ -228,8 +229,18 @@ video.active{
         font-size: calc(2*(0.5vh + 0.5vw));
     }
     .modal{
-        width: 50%;
-        height: 40%;
+        width: 90%;
+        height:60%;
+    }
+    .modal input{
+        padding: 0 2vw;
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
+    .dropDown{
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
+    .modalButton{
+        font-size: calc(3*(0.5vh + 0.5vw));
     }
 }
 
@@ -270,7 +281,17 @@ video.active{
         width: 100vw;
     }
     .modal{
-        width: 55%;
-        height:35%;
+        width: 90%;
+        height:50%;
+    }
+    .modal input{
+        padding: 0 2vw;
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
+    .dropDown{
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
+    .modalButton{
+        font-size: calc(3*(0.5vh + 0.5vw));
     }
 }
