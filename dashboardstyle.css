@@ -18,7 +18,22 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color: #303D2B;
+    background-image: linear-gradient(#506149,#303D2B);
+}
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.324);
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0%;
+    transition: 0.5s ease-in-out;
+}
+.overlay.active{
+    display: block;
+    opacity: 100%;
+    pointer-events: all;
 }
 .container{
     width: 90vw;
@@ -27,9 +42,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* justify-content: space-between;
-    position: absolute;
-    z-index: 2; */
 }
 .loggedInAs{
     padding: 1vh 0;
@@ -68,7 +80,7 @@ body{
 .buttons button:hover{
     transform: scale(102%);
     transition: 0.1s ease-in-out;
-    background-color: #405737;
+    background-color: #394434;
 }
 #logOut{
     background-color: #735656;
@@ -76,8 +88,7 @@ body{
 #logOut:hover{
     background-color: #4f2525;
 }
-.row2{
-    width: 40vw;
+.row2,.list{
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -88,10 +99,43 @@ body{
     flex-basis: 60%;
     padding: 5vh 2vw;
 }
+.list{
+    width: 50%;
+    height: 80%;
+    z-index: 5;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #525254;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+}
+.list.active{
+    pointer-events: all;
+    top: 50%;
+    opacity: 1;
+}
+.listAll{
+    height: 90%;
+    justify-content: space-between;
+    padding: 0 5vw;
+}
+.listAll ol{
+    padding-bottom: 5vh;
+}
+.listAll ol li{
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(2*(0.5vh + 0.5vw));
+    font-weight: 200;
+    color: #ffffff;
+}
 .issue{
     padding: 3vh 2vw;
     font-family: 'Roboto Mono', monospace;
     background-color: white;
+    background-image: linear-gradient(135deg,#ffffff,#d8d8d8);
     border-radius: 0.2em;
     display: flex;
     flex-direction: column;
@@ -136,7 +180,7 @@ body{
     position: absolute;
     width: 55%;
     height: 60%;
-    z-index: 3;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -157,15 +201,15 @@ body{
     opacity: 1;
     pointer-events: all;
 }
-.modal>img{
+.closebtn{
     position: relative;
-    width: 5%;
+    width: calc(5*(0.5vh + 0.5vw));
     align-self: flex-end;
     filter: invert(100%);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-.modal img:hover{
+.closebtn:hover{
     transform: scale(105%);
     opacity: 50%;
     transition: 0.2s ease-in-out;
@@ -174,7 +218,7 @@ body{
     width: 100%;
     height: 12%;
     border:none;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     padding: 0 1vw;
@@ -183,7 +227,7 @@ body{
     width: 100%;
     height: 12%;
     border:none;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     padding: 1vh 1vw;
@@ -195,7 +239,7 @@ body{
 .modalButton{
     height: 12%;
     border: none;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     cursor: pointer;
@@ -257,6 +301,15 @@ body{
     .finisher{
         font-size: calc(1.5*(0.5vh + 0.5vw));
     }
+    .list{ 
+        width: 90%;
+    }
+    .listAll ol{
+        padding: 0 5vw;
+    }
+    .listAll ol li{
+        font-size: calc(3*(0.5vh + 0.5vw));
+    }
 }
 
 @media only screen and (max-width: 480px){
@@ -309,5 +362,14 @@ body{
     }
     .finisher{
         font-size: calc(1.2*(0.5vh + 0.5vw));
+    }
+    .list{ 
+        width: 90%;
+    }
+    .listAll ol{
+        padding: 0 5vw;
+    }
+    .listAll ol li{
+        font-size: calc(3*(0.5vh + 0.5vw));
     }
 }

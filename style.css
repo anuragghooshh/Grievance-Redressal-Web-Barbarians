@@ -8,6 +8,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #303D2B;
+    background-image: linear-gradient(#506149,#303D2B);
 }
 .container{
     width: 80vw;
@@ -32,6 +33,9 @@ body{
     transition: 0.2s ease-in-out;
     color: rgb(255, 42, 42);
 }
+.row1>div{
+    display: flex;
+}
 .row1 p{
     position: relative;
     left: 0.4vw;
@@ -39,6 +43,14 @@ body{
     font-size: calc(1.2*(0.5vh + 0.5vw));
     font-weight:lighter;
     color: rgba(255, 255, 255, 0.43);
+}
+.row1 p::after{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    height: 2vh;
+    background-color: rgba(255, 255, 255, 0.43);
+    animation: blink 0.3s infinite;
 }
 br{
     display: block;
@@ -88,12 +100,14 @@ aside{
     padding: 3vh 3vh;
     background-color: #6E776B;
     backdrop-filter: blur(0em);
+    -webkit-backdrop-filter: blur(0em);
     bottom: 0;
 }
 aside.blur {
     transition: 0.2s ease-in-out;
     background-color: #6e776b44;
     backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(1em);
 }
 video{
     width: 100vw;
@@ -129,6 +143,7 @@ video.active{
     opacity: 0;
     background-color: #4b5c7669;
     backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
     transition: 0.5s ease-in-out;
     pointer-events: none;
 }
@@ -293,5 +308,15 @@ video.active{
     }
     .modalButton{
         font-size: calc(3*(0.5vh + 0.5vw));
+    }
+}
+
+/* Animation */
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
