@@ -60,7 +60,7 @@ body{
     text-align: left;
     background-color: #6F786B;
     border: none;
-    border-radius: calc(0.2*(0.5vh + 0.5vw));
+    border-radius: 0.1em;
     cursor: pointer;
     transition: 0.1s ease-in-out;
 }
@@ -69,13 +69,19 @@ body{
     transition: 0.1s ease-in-out;
     background-color: #405737;
 }
+#logOut{
+    background-color: #735656;
+}
+#logOut:hover{
+    background-color: #4f2525;
+}
 .row2{
     width: 40vw;
     height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.5em;
     background-color: #525254;
     overflow-y: scroll;
     flex-basis: 60%;
@@ -85,7 +91,7 @@ body{
     padding: 3vh 2vw;
     font-family: 'Roboto Mono', monospace;
     background-color: white;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.2em;
     display: flex;
     flex-direction: column;
     margin-top: 2vh;
@@ -135,7 +141,7 @@ body{
     justify-content: space-around;
     padding: 2vh 2vw;
     border: rgba(255, 255, 255, 0.19) solid 0.1em;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.5em;
     top: 0%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
@@ -167,7 +173,7 @@ body{
     width: 100%;
     height: 12%;
     border:none;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.5em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     padding: 0 1vw;
@@ -176,7 +182,7 @@ body{
     width: 100%;
     height: 12%;
     border:none;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.5em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     padding: 1vh 1vw;
@@ -188,7 +194,7 @@ body{
 .modalButton{
     height: 12%;
     border: none;
-    border-radius: calc(0.5*(0.5vh + 0.5vw));
+    border-radius: 0.5em;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(1.5*(0.5vh + 0.5vw));
     cursor: pointer;
@@ -199,4 +205,44 @@ body{
 .modalButton:hover{
     transition: 0.2s ease-in-out;
     background-color: #4d617f;
+}
+
+/* Responsiveness */
+@media only screen and (max-width:868px) and (min-width:481px){
+    .container{
+        flex-direction: column;
+        height: 95vh;
+    }
+    .loggedInAs{
+        justify-content: space-evenly;
+    }
+    .loggedInAs h1{
+        font-size: calc(5*(0.5vh + 0.5vw));
+    }
+    .buttons{
+        height: 40vh;
+    }
+    .buttons button{
+        width: 90vw;
+        text-align: center;
+        font-size: calc(3.5*(0.5vh + 0.5vw));
+    }
+    .row1{
+        position: relative;
+        margin-top: 5vh;
+    }
+    .row2{
+        width: 90vw;
+    }
+    .issue>h1{
+        font-size: calc(3*(0.5vh + 0.5vw));
+        color: #525254;
+    }
+    .issue>p{
+        font-size: calc(2.5*(0.5vh + 0.5vw));
+        color: #525254;
+    }
+    .finisher{
+        font-size: calc(2*(0.5vh + 0.5vw));
+    }
 }
